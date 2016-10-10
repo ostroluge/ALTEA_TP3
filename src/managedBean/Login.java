@@ -10,7 +10,7 @@ import metier.MetierPersonnes;
 @SessionScoped
 public class Login {
 
-	private String name="toto";
+	private String name;
 	private String password;
 	
 	public Login() {

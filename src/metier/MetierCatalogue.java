@@ -68,7 +68,7 @@ public class MetierCatalogue {
 	}
 
 	public static ArrayList<Livre> getLivreEmprunte(String login) {
-		ArrayList<Livre> livres = catalogue.getListeLivres();
+		ArrayList<Livre> livres = getCatalogue().getListeLivres();
 		ArrayList<Livre> result = new ArrayList<>();
 		for (Livre livre : livres) {
 			if (livre.getEmprunteur().equals(login)) {
@@ -79,13 +79,14 @@ public class MetierCatalogue {
 	}
 
 	public static ArrayList<Livre> getLivreNonEmprunte() {
-		ArrayList<Livre> livres = catalogue.getListeLivres();
+		ArrayList<Livre> livres = getCatalogue().getListeLivres();
 		ArrayList<Livre> result = new ArrayList<>();
 		for (Livre livre : livres) {
 			if (livre.getEmprunteur() == null || livre.getEmprunteur().equals("")) {
 				result.add(livre);
 			}
 		}
+		System.out.println(result.size());
 		return result;
 	}
 }
