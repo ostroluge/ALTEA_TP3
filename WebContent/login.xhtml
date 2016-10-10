@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:core="http://java.sun.com/jsf/core"
+	xmlns:html="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+<head>
+<title>Page de connexion</title>
+</head>
+<body>
+	<core:view>
+		<html:form>
+			<html:outputText>Login : </html:outputText>
+			<html:inputText value="#{login.name}"></html:inputText>
+			<br/>
+			<html:outputText>Mot de passe : </html:outputText>
+			<html:inputSecret value="#{login.password}"></html:inputSecret>
+			<br/>
+			<html:commandButton value="Connexion" action="#{login.logUser}"></html:commandButton>
+		</html:form>
+	</core:view>
+</body>
+</html>
