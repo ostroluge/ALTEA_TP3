@@ -53,6 +53,7 @@ public class MetierCatalogue {
 			livre6.setTitre("Le petit Spirou, T14");
 			livre6.setAuteur("Janry, Tome");
 			livre6.setImage("http://static.fnac-static.com/multimedia/Images/FR/NR/51/08/26/2492497/1539-6.jpg");
+			livre6.setEmprunteur("root");
 			
 			ArrayList<Livre> listeLivre = new ArrayList<Livre>();
 			listeLivre.add(livre1);
@@ -78,6 +79,17 @@ public class MetierCatalogue {
 		return result;
 	}
 
+	public static ArrayList<Livre> getLivresEmpruntes() {
+		ArrayList<Livre> livres = getCatalogue().getListeLivres();
+		ArrayList<Livre> result = new ArrayList<>();
+		for (Livre livre : livres) {
+			if (livre.getEmprunteur() != null) {
+				result.add(livre);
+			}
+		}
+		return result;
+	}
+	
 	public static ArrayList<Livre> getLivreNonEmprunte() {
 		ArrayList<Livre> livres = getCatalogue().getListeLivres();
 		ArrayList<Livre> result = new ArrayList<>();
@@ -86,7 +98,6 @@ public class MetierCatalogue {
 				result.add(livre);
 			}
 		}
-		System.out.println(result.size());
 		return result;
 	}
 }

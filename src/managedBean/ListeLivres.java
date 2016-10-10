@@ -11,8 +11,12 @@ import metier.MetierCatalogue;
 @ManagedBean (name="listeLivres")
 @SessionScoped
 public class ListeLivres {
-
+	
 	public ArrayList<Livre> getLivres() {
 		return MetierCatalogue.getLivreNonEmprunte();
+	}
+
+	public ArrayList<Livre> getLivresARendre() {
+		return MetierCatalogue.getLivresEmpruntes();
 	}
 }
