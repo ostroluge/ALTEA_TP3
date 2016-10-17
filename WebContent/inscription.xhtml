@@ -16,7 +16,10 @@
 		<html:inputText value="#{inscription.prenom}"></html:inputText>
 		<br />
 		<html:outputText>Login : </html:outputText>
-		<html:inputText value="#{inscription.login}"></html:inputText>
+		<html:inputText id="checkLogin" value="#{inscription.login}">
+			<core:validator validatorId="loginValidator" />
+		</html:inputText>
+		<html:message for="checkLogin" showDetail="true" showSummary="true" />
 		<br />
 		<html:outputText>Mot de passe : </html:outputText>
 		<html:inputSecret value="#{inscription.motDePasse}"></html:inputSecret>

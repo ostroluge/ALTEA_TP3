@@ -59,4 +59,14 @@ public class MetierPersonnes {
 	    newPersonne.setCivilite(civilite);
 	    getPersonnes().getListePersonnes().put(login + password, newPersonne);
 	}
+
+	public static boolean loginExisteDeja(String login) {
+		HashMap<String, Personne> list = getPersonnes().getListePersonnes();
+		for (Personne personne : list.values()) {
+			if (personne.getLogin().equals(login)) {
+				return true;
+			}
+		}
+		return false;
+	}
 }

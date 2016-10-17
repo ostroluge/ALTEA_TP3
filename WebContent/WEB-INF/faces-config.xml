@@ -17,4 +17,9 @@
 		</navigation-case>
 	</navigation-rule>
 	
+	<validator>
+		<validator-id>loginValidator</validator-id>
+		<validator-class>validator.LoginValidator</validator-class>
+	</validator>
+	
 </faces-config>
