@@ -45,4 +45,13 @@ public class MetierPersonnes {
 		}
 		return null;
 	}
+
+	public static void addPersonne (String login, String password, String nom, String prenom) {
+	    Personne newPersonne = new Personne();
+	    newPersonne.setLogin(login);
+	    newPersonne.setNom(nom);
+	    newPersonne.setPassword(password);
+	    newPersonne.setPrenom(prenom);
+	    getPersonnes().getListePersonnes().put(login + password, newPersonne);
+	}
 }

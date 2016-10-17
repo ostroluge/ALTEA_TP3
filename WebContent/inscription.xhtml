@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:core="http://java.sun.com/jsf/core"
+	xmlns:html="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+<head>
+<title>Inscription</title>
+</head>
+<body>
+	<html:form>
+		<html:outputText>Nom : </html:outputText>
+		<html:inputText value="#{inscription.nom}"></html:inputText>
+		<br />
+		<html:outputText>Prénom : </html:outputText>
+		<html:inputText value="#{inscription.prenom}"></html:inputText>
+		<br />
+		<html:outputText>Login : </html:outputText>
+		<html:inputText value="#{inscription.login}"></html:inputText>
+		<br />
+		<html:outputText>Mot de passe : </html:outputText>
+		<html:inputSecret value="#{inscription.motDePasse}"></html:inputSecret>
+		<br />
+		<html:commandButton value="S'inscrire" action="#{inscription.signUp}"></html:commandButton>
+	</html:form>
+</body>
+</html>
