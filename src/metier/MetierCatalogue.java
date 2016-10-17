@@ -16,7 +16,7 @@ public class MetierCatalogue {
 			livre1.setId("1");
 			livre1.setTitre("Légendes de Troy, T1");
 			livre1.setAuteur("Keramidas, Arleston, Melanyn");
-			livre1.setImage("http://static.fnac-static.com/multimedia/Images/FR/NR/3f/9b/25/2464575/1539-6.jpg ");
+			livre1.setImage("http://static.fnac-static.com/multimedia/Images/FR/NR/3f/9b/25/2464575/1539-6.jpg");
 			livre1.setResume("Une nouvelle série permettant à de grands dessinateurs d'explorer le vaste univers de Troy... Nicolas Keramidas ouvre le bal.");
 			
 			Livre livre2 = new Livre();
@@ -53,7 +53,6 @@ public class MetierCatalogue {
 			livre6.setTitre("Le petit Spirou, T14");
 			livre6.setAuteur("Janry, Tome");
 			livre6.setImage("http://static.fnac-static.com/multimedia/Images/FR/NR/51/08/26/2492497/1539-6.jpg");
-			livre6.setEmprunteur("root");
 			
 			ArrayList<Livre> listeLivre = new ArrayList<Livre>();
 			listeLivre.add(livre1);
@@ -72,8 +71,10 @@ public class MetierCatalogue {
 		ArrayList<Livre> livres = getCatalogue().getListeLivres();
 		ArrayList<Livre> result = new ArrayList<>();
 		for (Livre livre : livres) {
-			if (livre.getEmprunteur().equals(login)) {
-				result.add(livre);
+			if (livre.getEmprunteur() != null) {
+				if (livre.getEmprunteur().equals(login)) {
+					result.add(livre);
+				}
 			}
 		}
 		return result;

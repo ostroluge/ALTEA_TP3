@@ -9,42 +9,59 @@
 </head>
 <body>
 	<core:view>
-		<html:dataTable value="#{listeLivres.livres}" var="livre">
-			<html:column>
-				<core:facet name="header">
-					<core:verbatim>Ref</core:verbatim>
-				</core:facet>
-				<html:outputText value="#{livre.id}" />
-			</html:column>
+		<html:form>
+			<html:dataTable value="#{listeLivres.livres}" var="livre">
+				<html:column>
+					<core:facet name="header">
+						<core:verbatim>Ref</core:verbatim>
+					</core:facet>
+					<html:outputText value="#{livre.id}" />
+				</html:column>
 
-			<html:column>
-				<core:facet name="header">
-					<core:verbatim>Titre</core:verbatim>
-				</core:facet>
-				<html:outputText value="#{livre.titre}" />
-			</html:column>
+				<html:column>
+					<core:facet name="header">
+						<core:verbatim>Titre</core:verbatim>
+					</core:facet>
+					<html:outputText value="#{livre.titre}" />
+				</html:column>
 
-			<html:column>
-				<core:facet name="header">
-					<core:verbatim>Auteur</core:verbatim>
-				</core:facet>
-				<html:outputText value="#{livre.auteur}" />
-			</html:column>
-			
-			<html:column>
-				<core:facet name="header">
-					<core:verbatim>Résumé</core:verbatim>
-				</core:facet>
-				<html:outputText value="#{livre.resume}" />
-			</html:column>
-			
-			<html:column>
-				<core:facet name="header">
-					<core:verbatim>Image</core:verbatim>
-				</core:facet>
-				<html:graphicImage value="#{livre.image}"/>
-			</html:column>
-		</html:dataTable>
+				<html:column>
+					<core:facet name="header">
+						<core:verbatim>Auteur</core:verbatim>
+					</core:facet>
+					<html:outputText value="#{livre.auteur}" />
+				</html:column>
+
+				<html:column>
+					<core:facet name="header">
+						<core:verbatim>Résumé</core:verbatim>
+					</core:facet>
+					<html:outputText value="#{livre.resume}" />
+				</html:column>
+
+				<html:column>
+					<core:facet name="header">
+						<core:verbatim>Image</core:verbatim>
+					</core:facet>
+					<html:graphicImage value="#{livre.image}" />
+				</html:column>
+
+				<html:column>
+					<core:facet name="header">
+						<core:verbatim>Emprunt</core:verbatim>
+					</core:facet>
+					<html:selectBooleanCheckbox
+						value="#{listeLivres.checked[livre.id]}" />
+				</html:column>
+
+			</html:dataTable>
+
+			<html:commandButton value="Emprunter les livres"
+				action="#{listeLivres.emprunterLivres}">
+				<core:setPropertyActionListener target="#{listeLivres.login}"
+					value="#{login.name}" />
+			</html:commandButton>
+		</html:form>
 	</core:view>
 </body>
 </html>
