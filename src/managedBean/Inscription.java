@@ -1,5 +1,7 @@
 package managedBean;
 
+import java.util.Date;
+
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 
@@ -14,13 +16,14 @@ public class Inscription {
 	private String login;
 	private String motDePasse;
 	private Boolean droitImage;
+	private Date dateDeNaissance;
 	
 	public Inscription() {
 
 	}
 
 	public void signUp() {
-		MetierPersonnes.addPersonne(login, motDePasse, nom, prenom, droitImage);
+		MetierPersonnes.addPersonne(login, motDePasse, nom, prenom, droitImage, dateDeNaissance);
 	}
 	
 	public String getNom() {
@@ -61,5 +64,13 @@ public class Inscription {
 
 	public void setDroitImage(Boolean droitImage) {
 		this.droitImage = droitImage;
+	}
+
+	public Date getDateDeNaissance() {
+		return dateDeNaissance;
+	}
+
+	public void setDateDeNaissance(Date dateDeNaissance) {
+		this.dateDeNaissance = dateDeNaissance;
 	}
 }

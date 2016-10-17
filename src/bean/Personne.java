@@ -1,5 +1,7 @@
 package bean;
 
+import java.util.Date;
+
 public class Personne {
 
 	private String nom;
@@ -7,6 +9,7 @@ public class Personne {
 	private String login;
 	private String password;
 	private Boolean droitImage;
+	private Date dateDeNaissance;
 	
 	public Personne() {
 
@@ -50,5 +53,13 @@ public class Personne {
 
 	public void setDroitImage(Boolean droitImage) {
 		this.droitImage = droitImage;
+	}
+
+	public Date getDateDeNaissance() {
+		return dateDeNaissance;
+	}
+
+	public void setDateDeNaissance(Date dateDeNaissance) {
+		this.dateDeNaissance = dateDeNaissance;
 	}
 }

@@ -1,5 +1,6 @@
 package metier;
 
+import java.util.Date;
 import java.util.HashMap;
 
 import bean.ListingEmprunteur;
@@ -47,13 +48,14 @@ public class MetierPersonnes {
 		return null;
 	}
 
-	public static void addPersonne (String login, String password, String nom, String prenom, boolean droitImage) {
+	public static void addPersonne (String login, String password, String nom, String prenom, boolean droitImage, Date dateDeNaissance) {
 	    Personne newPersonne = new Personne();
 	    newPersonne.setLogin(login);
 	    newPersonne.setNom(nom);
 	    newPersonne.setPassword(password);
 	    newPersonne.setPrenom(prenom);
 	    newPersonne.setDroitImage(droitImage);
+	    newPersonne.setDateDeNaissance(dateDeNaissance);
 	    getPersonnes().getListePersonnes().put(login + password, newPersonne);
 	}
 }

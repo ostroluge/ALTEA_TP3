@@ -21,6 +21,11 @@
 		<html:outputText>Mot de passe : </html:outputText>
 		<html:inputSecret value="#{inscription.motDePasse}"></html:inputSecret>
 		<br />
+		<html:outputText>Date de naissance : </html:outputText>
+		<html:inputText value="#{inscription.dateDeNaissance}">
+			<core:convertDateTime type="date" dateStyle="short"/>
+		</html:inputText>
+		<br />
 		<html:outputText>Droit à l'image : </html:outputText>
 		<html:selectBooleanCheckbox value="#{inscription.droitImage}" />
 		<br />
