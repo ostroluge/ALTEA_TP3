@@ -40,4 +40,12 @@ public class Login {
 		}
 		return "Accepted";
 	}
+
+	public Personne getPersonne() {
+		Personne personne = MetierPersonnes.getPersonne(this.name, this.password);
+		if (personne != null) {
+			return personne;
+		}
+		return null;
+	}
 }

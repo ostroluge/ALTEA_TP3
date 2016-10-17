@@ -13,13 +13,14 @@ public class Inscription {
 	private String prenom;
 	private String login;
 	private String motDePasse;
+	private Boolean droitImage;
 	
 	public Inscription() {
 
 	}
 
 	public void signUp() {
-		MetierPersonnes.addPersonne(login, motDePasse, nom, prenom);
+		MetierPersonnes.addPersonne(login, motDePasse, nom, prenom, droitImage);
 	}
 	
 	public String getNom() {
@@ -52,5 +53,13 @@ public class Inscription {
 
 	public void setMotDePasse(String motDePasse) {
 		this.motDePasse = motDePasse;
+	}
+
+	public Boolean getDroitImage() {
+		return droitImage;
+	}
+
+	public void setDroitImage(Boolean droitImage) {
+		this.droitImage = droitImage;
 	}
 }

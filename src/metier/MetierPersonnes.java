@@ -24,6 +24,7 @@ public class MetierPersonnes {
 			personne2.setPassword("root");
 			personne2.setNom("Root");
 			personne2.setPrenom("Root");
+			personne2.setDroitImage(true);
 
 			HashMap<String, Personne> listePersonne = new HashMap<String, Personne>();
 			listePersonne.put(personne1.getLogin() + personne1.getPassword(),
@@ -46,12 +47,13 @@ public class MetierPersonnes {
 		return null;
 	}
 
-	public static void addPersonne (String login, String password, String nom, String prenom) {
+	public static void addPersonne (String login, String password, String nom, String prenom, boolean droitImage) {
 	    Personne newPersonne = new Personne();
 	    newPersonne.setLogin(login);
 	    newPersonne.setNom(nom);
 	    newPersonne.setPassword(password);
 	    newPersonne.setPrenom(prenom);
+	    newPersonne.setDroitImage(droitImage);
 	    getPersonnes().getListePersonnes().put(login + password, newPersonne);
 	}
 }

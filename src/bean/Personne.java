@@ -6,6 +6,7 @@ public class Personne {
 	private String prenom;
 	private String login;
 	private String password;
+	private Boolean droitImage;
 	
 	public Personne() {
 
@@ -41,5 +42,13 @@ public class Personne {
 
 	public void setPassword(String password) {
 		this.password = password;
+	}
+
+	public Boolean getDroitImage() {
+		return droitImage;
+	}
+
+	public void setDroitImage(Boolean droitImage) {
+		this.droitImage = droitImage;
 	}
 }

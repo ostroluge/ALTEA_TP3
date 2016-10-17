@@ -39,11 +39,11 @@
 					<html:outputText value="#{livre.resume}" />
 				</html:column>
 
-				<html:column>
+				<html:column rendered="#{login.personne.droitImage}">
 					<core:facet name="header">
 						<core:verbatim>Image</core:verbatim>
 					</core:facet>
-					<html:graphicImage value="#{livre.image}" />
+					<html:graphicImage value="#{livre.image}"/>
 				</html:column>
 
 				<html:column>
