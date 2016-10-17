@@ -4,6 +4,7 @@ import java.util.Date;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
+import javax.faces.model.SelectItem;
 
 import metier.MetierPersonnes;
 
@@ -17,13 +18,14 @@ public class Inscription {
 	private String motDePasse;
 	private Boolean droitImage;
 	private Date dateDeNaissance;
+	private int civilite;
 	
 	public Inscription() {
 
 	}
 
 	public void signUp() {
-		MetierPersonnes.addPersonne(login, motDePasse, nom, prenom, droitImage, dateDeNaissance);
+		MetierPersonnes.addPersonne(login, motDePasse, nom, prenom, droitImage, dateDeNaissance, civilite);
 	}
 	
 	public String getNom() {
@@ -72,5 +74,13 @@ public class Inscription {
 
 	public void setDateDeNaissance(Date dateDeNaissance) {
 		this.dateDeNaissance = dateDeNaissance;
+	}
+
+	public int getCivilite() {
+		return civilite;
+	}
+
+	public void setCivilite(int civilite) {
+		this.civilite = civilite;
 	}
 }

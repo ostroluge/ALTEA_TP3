@@ -10,6 +10,7 @@ public class Personne {
 	private String password;
 	private Boolean droitImage;
 	private Date dateDeNaissance;
+	private int civilite;
 	
 	public Personne() {
 
@@ -61,5 +62,13 @@ public class Personne {
 
 	public void setDateDeNaissance(Date dateDeNaissance) {
 		this.dateDeNaissance = dateDeNaissance;
+	}
+
+	public int getCivilite() {
+		return civilite;
+	}
+
+	public void setCivilite(int civilite) {
+		this.civilite = civilite;
 	}
 }

@@ -21,6 +21,12 @@
 		<html:outputText>Mot de passe : </html:outputText>
 		<html:inputSecret value="#{inscription.motDePasse}"></html:inputSecret>
 		<br />
+		<html:outputText>Civilité : </html:outputText>
+		<html:selectOneRadio value="#{inscription.civilite}">
+			<core:selectItem itemValue="1" itemLabel="Mademoiselle" />
+			<core:selectItem itemValue="2" itemLabel="Madame" />
+			<core:selectItem itemValue="3" itemLabel="Monsieur" />
+		</html:selectOneRadio>
 		<html:outputText>Date de naissance : </html:outputText>
 		<html:inputText value="#{inscription.dateDeNaissance}">
 			<core:convertDateTime type="date" dateStyle="short"/>

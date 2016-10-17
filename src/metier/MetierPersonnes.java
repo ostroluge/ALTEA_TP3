@@ -48,7 +48,7 @@ public class MetierPersonnes {
 		return null;
 	}
 
-	public static void addPersonne (String login, String password, String nom, String prenom, boolean droitImage, Date dateDeNaissance) {
+	public static void addPersonne (String login, String password, String nom, String prenom, boolean droitImage, Date dateDeNaissance, int civilite) {
 	    Personne newPersonne = new Personne();
 	    newPersonne.setLogin(login);
 	    newPersonne.setNom(nom);
@@ -56,6 +56,7 @@ public class MetierPersonnes {
 	    newPersonne.setPrenom(prenom);
 	    newPersonne.setDroitImage(droitImage);
 	    newPersonne.setDateDeNaissance(dateDeNaissance);
+	    newPersonne.setCivilite(civilite);
 	    getPersonnes().getListePersonnes().put(login + password, newPersonne);
 	}
 }
